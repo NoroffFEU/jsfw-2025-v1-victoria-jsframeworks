@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Products from './components/Products/Products';
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
@@ -13,6 +14,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Header />
+      <Products />
       <Footer />
     </BrowserRouter>
   </React.StrictMode>
