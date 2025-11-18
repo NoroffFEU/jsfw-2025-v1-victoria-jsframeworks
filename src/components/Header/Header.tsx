@@ -14,7 +14,11 @@ function Header() {
     const items = useCartStore((state) => state.items);
     const totalCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
-    const removeItem = useCartStore((state) => state.removeFromCart);
+        const totalPrice = items.reduce((sum, item) => {
+        return sum + item.price * item.quantity;
+    }, 0);
+
+    const removeFromCart = useCartStore((state) => state.removeFromCart);
 
     /* Closes the side menu */
     useEffect(() => {
@@ -89,7 +93,7 @@ function Header() {
                                 <button
                                     className="remove-btn"
                                     onClick={() => {
-                                        removeItem(item.id);
+                                        removeFromCart(item.id);
                                         toast.error("Item removed from cart!");
                                     }}
                                 >
@@ -97,6 +101,11 @@ function Header() {
                                 </button>
                             </div>
                         ))
+                    )}{items.length > 0 && (
+                        <div className="cart-total">
+                            <p>Total:</p>
+                            <p className="total-amount">${totalPrice.toFixed(2)}</p>
+                        </div>
                     )}
 
                     <Link to="/checkout" className="checkout-btn" onClick={() => setCartOpen(false)}>

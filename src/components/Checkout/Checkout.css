@@ -1,0 +1,41 @@
+.checkout-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.checkout-quantity button {
+    background-color: #7980FF;
+    width: 2rem;
+    max-height: 4em;
+    font-size: 2em;
+    color: white;
+    border-radius: 8px;
+    margin: 0 1rem;
+}
+
+.checkout-item {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid black;
+}
+
+.checkout-item img {
+    width: 8em;
+    height: 12em;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #7980FF;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}

@@ -119,6 +119,10 @@
   text-decoration: none;
 }
 
+.cart-total {
+  text-align: center;
+}
+
 /* Remove item button */
 .remove-btn {
   background: none;

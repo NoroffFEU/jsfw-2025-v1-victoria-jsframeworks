@@ -15,6 +15,10 @@ interface CartState {
     increaseQty: (id: string) => void;
     decreaseQty: (id: string) => void;
     clearCart: () => void;
+    checkoutSuccess: boolean;
+    setCheckoutSuccess: (value: boolean) => void;
+    lastOrderItemCount: number;
+    setLastOrderItemCount: (count: number) => void;
 }
 
 export const useCartStore = create<CartState>((set) => ({
@@ -61,4 +65,8 @@ export const useCartStore = create<CartState>((set) => ({
         })),
 
     clearCart: () => set({ items: [] }),
+        checkoutSuccess: false,
+    setCheckoutSuccess: (value) => set({ checkoutSuccess: value }),
+    lastOrderItemCount: 0,
+    setLastOrderItemCount: (count) => set({ lastOrderItemCount: count }),
 }));
