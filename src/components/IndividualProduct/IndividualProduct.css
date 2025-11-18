@@ -1,0 +1,98 @@
+.product-page {
+    max-width: 50%;
+    margin: 5em auto;
+    background: #BABABA;
+    border-radius: 25px;
+    padding: 3em;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.product-page img {
+    width: 100%;
+    border-radius: 25px;
+    margin-bottom: 2em;
+    object-fit: cover;
+}
+
+.product-page-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.product-page-description {
+    font-size: 1rem;
+    color: #333;
+    margin: 1.5em 0;
+}
+
+.product-page-price-section {
+    margin: 1.5em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.product-page-original-price {
+    text-decoration: line-through;
+    font-size: 1.1rem;
+}
+
+.product-page-discounted-price {
+    color: red;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.product-page-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.add-to-cart-btn {
+    background-color: #7980FF;
+    border: none;
+    color: white;
+    padding: 1em 2em;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 2em;
+    width: 70%;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #5f66d6;
+}
+
+/* Tags section */
+.tags-section {
+    max-width: 50%;
+    margin: 2em auto;
+    padding: 1em;
+    text-align: center;
+}
+
+/* Reviews section */
+.reviews-section {
+    max-width: 50%;
+    margin: 3em auto;
+    padding: 2em;
+    background: #f5f5f5;
+    border-radius: 20px;
+}
+
+.review-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+}
+
+.no-reviews {
+    text-align: center;
+    margin-top: 2em;
+    color: #666;
+}

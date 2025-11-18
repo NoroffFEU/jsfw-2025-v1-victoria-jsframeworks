@@ -42,6 +42,7 @@
 /* Price styling */
 .original-price {
     text-decoration: line-through;
+    color: black;
 }
 
 .discounted-price {
@@ -64,4 +65,12 @@
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: bold;
+}
+
+.no-results {
+    text-align: center;
+}
+
+.product-link {
+    text-decoration: none;
 }
