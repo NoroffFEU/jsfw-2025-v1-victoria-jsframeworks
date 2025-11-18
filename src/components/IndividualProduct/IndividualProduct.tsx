@@ -1,5 +1,6 @@
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
+import { useCartStore } from "../../store/useCartStore";
 import { useEffect, useState } from "react";
 import { API_URL } from "../../api/Api";
 import "./IndividualProduct.css";
@@ -25,6 +26,7 @@ interface Product {
 }
 
 export default function IndividualProduct() {
+    const addToCart = useCartStore((state) => state.addToCart);
     const { id } = useParams<{ id: string }>();
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
@@ -83,7 +85,18 @@ export default function IndividualProduct() {
 
             <button
                 className="add-to-cart-btn"
-                onClick={() => toast.success("Added to cart!")}
+                onClick={() => {
+                    if (!product) return;
+
+                    addToCart({
+                        id: product.id,
+                        title: product.title,
+                        price: product.discountedPrice ?? product.price,
+                        image: product.image.url,
+                    });
+
+                    toast.success("Added to cart!");
+                }}
             >
                 Add to Cart
             </button>
