@@ -7,6 +7,7 @@ import Products from "./components/Products/Products";
 import ProductPage from './components/IndividualProduct/IndividualProduct';
 import Checkout from './components/Checkout/Checkout';
 import Success from './components/Success/Success';
+import Contact from './components/Contact/Contact';
 import './index.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/products/:id" element={<ProductPage />} />
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/success" element={<Success />} />
+                    <Route path="/contact" element={<Contact />} />
                 </Routes>
             </main>
             <Footer />
