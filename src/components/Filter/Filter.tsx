@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import "./Filter.css";
 
 interface FilterProps {
@@ -6,24 +6,14 @@ interface FilterProps {
 }
 
 function Filter({ onSort }: FilterProps) {
-    const [sortOption, setSortOption] = useState('');
-
-    useEffect(() => {
-        if (sortOption) {
-            onSort(sortOption);
-        }
-    }, [sortOption, onSort]);
-
-    const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setSortOption(e.target.value);
-    };
+    const [sortOption] = useState('');
 
     return (
         <div className="filter-container">
             <div className="filter-select-wrapper">
                 <select 
                     value={sortOption} 
-                    onChange={handleSortChange}
+                    onChange={(e) => onSort(e.target.value)}
                     className="filter-select"
                 >
                     <option value="">Sort by...</option>
