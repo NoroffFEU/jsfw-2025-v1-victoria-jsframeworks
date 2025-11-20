@@ -53,3 +53,15 @@
     font-weight: bold;
     margin-top: 8px;
 }
+
+@media (min-width: 1024px) {
+    .contact-page {
+        max-width: 50%;
+        margin: auto;
+    }
+
+    .submit-btn {
+        width: auto;
+        align-self: center;
+    }
+}

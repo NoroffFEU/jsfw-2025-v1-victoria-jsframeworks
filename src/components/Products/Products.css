@@ -74,3 +74,13 @@
 .product-link {
     text-decoration: none;
 }
+
+.price {
+    color: black;
+}
+
+@media (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    }
+}
