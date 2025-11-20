@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import { toast } from "react-hot-toast";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 interface FormState {
     fullName: string;
@@ -106,6 +107,7 @@ export default function Contact() {
                 <button type="submit" className="submit-btn" disabled={loading}>
                     {loading ? "Sending..." : "Send Message"}
                 </button>
+                {loading && <LoadingSpinner />}
             </form>
         </div>
     );

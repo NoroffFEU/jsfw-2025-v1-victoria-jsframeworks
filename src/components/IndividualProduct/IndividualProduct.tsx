@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useCartStore } from "../../store/useCartStore";
 import { useEffect, useState } from "react";
 import { API_URL } from "../../api/Api";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import "./IndividualProduct.css";
 
 interface Product {
@@ -51,7 +52,7 @@ export default function IndividualProduct() {
         fetchProduct();
     }, [id]);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <LoadingSpinner />;
     if (error) return <p>Error: {error}</p>;
     if (!product) return <p>No product found.</p>;
 

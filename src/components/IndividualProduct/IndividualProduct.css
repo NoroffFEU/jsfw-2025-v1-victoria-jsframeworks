@@ -52,6 +52,7 @@
 
 .add-to-cart-btn {
     background-color: #7980FF;
+    width: auto;
     border: none;
     color: white;
     padding: 1em 2em;
@@ -59,7 +60,6 @@
     font-size: 1rem;
     cursor: pointer;
     margin-top: 2em;
-    width: 70%;
 }
 
 .add-to-cart-btn:hover {
@@ -95,4 +95,10 @@
     text-align: center;
     margin-top: 2em;
     color: #666;
+}
+
+@media (min-width: 1024px) {
+    .product-page {
+        max-width: 20%;
+    }
 }

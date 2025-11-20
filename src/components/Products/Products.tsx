@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { API_URL } from "../../api/Api";
 import Search from "../Search/Search";
 import Filter from "../Filter/Filter";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import "./Products.css"
 import { Link } from "react-router-dom";
 
@@ -89,7 +90,7 @@ function Products() {
         fetchAllProducts();
     }, []);
 
-    if (loading) return <p>Loading products...</p>;
+    if (loading) return <LoadingSpinner />;
     if (error) return <p>Error: {error}</p>;
 
     return (
