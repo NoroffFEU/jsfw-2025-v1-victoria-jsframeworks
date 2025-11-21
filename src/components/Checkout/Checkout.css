@@ -16,12 +16,20 @@
     margin: 0 1rem;
 }
 
+.checkout-quantity button:hover {
+    cursor: pointer;
+}
+
 .checkout-item {
     display: flex;
     gap: 2rem;
     align-items: center;
     padding: 1rem 0;
     border-bottom: 1px solid black;
+}
+
+.checkout-item-info {
+    text-align: center;
 }
 
 .checkout-item img {
@@ -38,4 +46,8 @@
     font-size: 1.5rem;
     cursor: pointer;
     margin-top: 0.5rem;
+}
+
+.checkout-btn:hover {
+    cursor: pointer;
 }

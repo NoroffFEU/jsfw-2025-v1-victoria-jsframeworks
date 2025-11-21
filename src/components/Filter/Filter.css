@@ -22,6 +22,10 @@
     outline: none;
 }
 
+.filter-select:hover {
+    cursor: pointer;
+}
+
 .filter-select option {
     background-color: #7980FF;
     color: white;

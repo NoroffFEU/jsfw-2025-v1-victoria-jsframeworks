@@ -13,15 +13,15 @@ describe("IndividualProduct", () => {
         jest.clearAllMocks();
     });
 
-    test("Shows loading text", () => {
-        (global.fetch as jest.Mock).mockResolvedValueOnce({
-        ok: true,
-        json: async () => ({ data: null }),
+    test("Shows loading spinner", () => {
+        (fetch as jest.Mock).mockResolvedValue({
+            ok: true,
+            json: async () => ({})
         });
 
         render(<IndividualProduct />);
 
-        expect(screen.getByText("Loading...")).toBeInTheDocument();
+        expect(screen.getByTestId("spinner")).toBeInTheDocument();
     });
 
     test("Shows error message", async () => {
