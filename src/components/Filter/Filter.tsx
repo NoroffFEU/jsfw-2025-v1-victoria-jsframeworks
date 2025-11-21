@@ -5,6 +5,7 @@ interface FilterProps {
     onSort: (sortOption: string) => void;
 }
 
+/* Dropdown that lets the user sort products by name, price or rating */
 function Filter({ onSort }: FilterProps) {
     const [sortOption] = useState('');
 

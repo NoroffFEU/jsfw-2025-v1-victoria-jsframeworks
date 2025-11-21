@@ -6,6 +6,7 @@ interface SearchProps {
     onClear: () => void;
 }
 
+/* Search component that filters products as the user types */
 function Search({ onSearch, onClear }: SearchProps) {
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -13,6 +14,7 @@ function Search({ onSearch, onClear }: SearchProps) {
         const value = e.target.value;
         setSearchTerm(value);
         
+        /* Clears input when user removes text */
         if (value === '') {
             onClear();
         } else {

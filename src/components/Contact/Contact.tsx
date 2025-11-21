@@ -10,6 +10,7 @@ interface FormState {
     message: string;
 }
 
+/* Lets the user fill out a form to send a contact message */
 export default function Contact() {
     const [form, setForm] = useState<FormState>({ fullName: "", subject: "", email: "", message: "" });
     const [loading, setLoading] = useState(false);
@@ -19,8 +20,10 @@ export default function Contact() {
         setForm((prev) => ({ ...prev, [name]: value }));
     };
 
+    /* Validates email */
     const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
 
+    /* Validation when trying to submit without filling out all the forms */
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -49,6 +52,7 @@ export default function Contact() {
         }
     };
 
+    /* Contact form container */
     return (
         <div className="contact-page">
             <h1>Contact Us</h1>

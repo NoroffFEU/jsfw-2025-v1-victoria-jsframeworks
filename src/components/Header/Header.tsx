@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
+/* Shows header on all pages */
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [cartOpen, setCartOpen] = useState(false);
@@ -11,6 +12,7 @@ function Header() {
     const menuRef = useRef<HTMLDivElement>(null);
     const cartRef = useRef<HTMLDivElement>(null);
 
+    /* Cart state */
     const items = useCartStore((state) => state.items);
     const totalCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
@@ -58,6 +60,7 @@ function Header() {
         };
     }, [cartOpen]);
 
+    /* Header container */
     return (
         <header className="header">
             <nav ref={menuRef} className={`side-menu ${menuOpen ? "open" : ""}`}>

@@ -23,6 +23,7 @@ interface ApiResponse {
     data: Product[];
 }
 
+/* Fetches and displays products on page */
 function Products() {
     const [products, setProducts] = useState<Product[]>([]);
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -44,6 +45,7 @@ function Products() {
         }
     }
 
+    /* Filters products based on the user's search input */
     const handleSearch = (searchTerm: string) => {
         if (!searchTerm.trim()) {
             setFilteredProducts(products);
@@ -56,6 +58,7 @@ function Products() {
         setFilteredProducts(filtered);
     };
 
+    /* Sort products based on name, price or rating */
     const handleSort = (sortOption: string) => {
         let sortedProducts = [...filteredProducts];
         
@@ -93,6 +96,7 @@ function Products() {
     if (loading) return <LoadingSpinner />;
     if (error) return <p>Error: {error}</p>;
 
+    /* Products container */
     return (
         <>
             <div className="search-filter-container">

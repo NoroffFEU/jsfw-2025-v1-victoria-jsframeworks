@@ -4,6 +4,7 @@ import { useCartStore } from "../../store/useCartStore";
 import "./Success.css";
 import { toast } from "react-hot-toast";
 
+/* Success page shown after the user completes a checkout */
 export default function Success() {
     const checkoutSuccess = useCartStore(state => state.checkoutSuccess);
     const lastOrderItemCount = useCartStore(state => state.lastOrderItemCount);

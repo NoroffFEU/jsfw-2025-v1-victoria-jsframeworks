@@ -26,6 +26,7 @@ interface Product {
     }[];
 }
 
+/* Lets the user see a more detailed product page */
 export default function IndividualProduct() {
     const addToCart = useCartStore((state) => state.addToCart);
     const { id } = useParams<{ id: string }>();
@@ -33,6 +34,7 @@ export default function IndividualProduct() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
+    /* Fetches the full product data for the selected product */
     const fetchProduct = useCallback(async () => {
         try {
             const response = await fetch(`${API_URL}/${id}`);
@@ -55,6 +57,7 @@ export default function IndividualProduct() {
     if (error) return <p>Error: {error}</p>;
     if (!product) return <p>No product found.</p>;
 
+    /* Individual product container */
     return (
     <>
         <div className="product-page">

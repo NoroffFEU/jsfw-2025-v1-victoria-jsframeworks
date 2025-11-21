@@ -1,5 +1,6 @@
 import "./Footer.css";
 
+/* Shows footer on all pages */
 function Footer() {
     return (
         <footer className="footer">

@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 import { useCartStore } from "../../store/useCartStore";
 import "./Checkout.css";
 
+/* Lets the user checkout when items are added to the cart */
 export default function Checkout() {
     const items = useCartStore(state => state.items);
     const increaseQuantity = useCartStore(state => state.increaseQty);
@@ -26,6 +27,7 @@ export default function Checkout() {
             navigate("/success", { state: { fromCheckout: true } });
     };
 
+    /* Checkout container */
     return (
         <div className="checkout-page">
 
