@@ -10,6 +10,7 @@
 
 .product-page img {
     width: 100%;
+    min-height: 25em;
     border-radius: 25px;
     margin-bottom: 2em;
     object-fit: cover;
