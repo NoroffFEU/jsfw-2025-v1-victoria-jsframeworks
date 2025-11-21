@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import { useCartStore } from "../../store/useCartStore";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { API_URL } from "../../api/Api";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import "./IndividualProduct.css";
@@ -33,24 +33,23 @@ export default function IndividualProduct() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    async function fetchProduct() {
+    const fetchProduct = useCallback(async () => {
         try {
             const response = await fetch(`${API_URL}/${id}`);
             if (!response.ok) throw new Error("Failed to fetch product");
 
             const data = await response.json();
-            
             setProduct(data.data);
         } catch (err: any) {
             setError(err.message);
         } finally {
             setLoading(false);
         }
-    }
+    }, [id]);
 
     useEffect(() => {
         fetchProduct();
-    }, [id]);
+    }, [fetchProduct]);
 
     if (loading) return <LoadingSpinner />;
     if (error) return <p>Error: {error}</p>;
