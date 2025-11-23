@@ -1,46 +1,140 @@
-# Getting Started with Create React App
+JS Frameworks 2025 – Online Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is my submission for the JavaScript Frameworks 2025 course assignment.
+It is a fully functional React + TypeScript online shop built using the Noroff Online Shop API.
 
-## Available Scripts
+Users can browse products, view details, search, filter, add items to their cart, checkout, and submit a contact form.
 
-In the project directory, you can run:
+#Live Demo:
+-Netlify Deployment: https://jsframeworksvictoria.netlify.app/
 
-### `npm start`
+#Project Features
+##Product List Page:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Fetches products from GET /online-shop
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+##Displays:
 
-### `npm test`
+-Product image
+-Title
+-Price (with discount handling)
+-Rating
+-Discount percent badge (if discounted)
+-Responsive product grid
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##Individual Product Page
+-Fetches one product using GET /online-shop/:id
 
-### `npm run build`
+Displays:
+-Title
+-Image
+-Description
+-Original + discounted price
+-Rating
+-Tags
+-Reviews
+-“Add to Cart” button with toast notification
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##Search & Sorting
+-Search
+-Updates results dynamically while typing
+-Clears results when the input is empty
+-Sorting options
+-Name (A–Z / Z–A)
+-Price (Low → High / High → Low)
+-Rating (High → Low)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##Shopping Cart
+-Uses Zustand for global state
+-Item count visible in header
+-Slide-out cart menu
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#Features:
+-Increase/decrease quantity
+-Remove items
+-Total price calculation
+-Toast notifications for interactions
+-Fully responsive cart panel
 
-### `npm run eject`
+##Checkout Page:
+-Displays all items in the cart
+-Quantity buttons (+ / –)
+-Remove item button
+-Shows total price
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##“Checkout” button:
+-Saves order item count
+-Clears cart
+-Redirects to success page
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##Success Page
+-Redirects away if accessed directly
+-Shows success message
+-Displays “Checkout successful!” toast one time only
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##Contact Form
+#Validates:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-Full name (min 3 characters)
+-Subject (min 3 characters)
+-Email format
+-Message (min 10 characters)
+-Shows toast notifications for:
+-Errors
+-Successful send
+-Loading spinner during submission
+-Resets the form after sending
 
-## Learn More
+##Toast Notifications
+#Used for:
+-Adding to cart
+-Removing from cart
+-Checkout success
+-Contact form errors
+-Contact form success
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##Unit Tests
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#Built with React Testing Library + Jest
+Includes tests for key components such as:
+
+-Header
+-Products
+-Filter
+-Search
+-Individual Product
+-Contact
+-Checkout
+-Success
+
+##Tech Stack
+
+-React
+-TypeScript
+-React Router
+-Zustand (state management)
+-React Testing Library + Jest
+-React Hot Toast
+-CSS
+-Netlify (deployment)
+
+▶️ How to Run the Project Locally
+1. Clone the repository
+git clone https://github.com/NoroffFEU/jsfw-2025-v1-victoria-jsframeworks.git
+cd jsfw-2025-v1-victoria-jsframeworks
+
+2. Install dependencies
+npm install
+
+3. Start development server
+npm start
+
+
+Your app runs at:
+http://localhost:3000
+
+Running Tests:
+npm test
+
+Build for Production:
+npm run build
