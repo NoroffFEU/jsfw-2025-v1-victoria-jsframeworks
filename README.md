@@ -5,15 +5,15 @@ It is a fully functional React + TypeScript online shop built using the Noroff O
 
 Users can browse products, view details, search, filter, add items to their cart, checkout, and submit a contact form.
 
-#Live Demo:
+# Live Demo:
 -Netlify Deployment: https://jsframeworksvictoria.netlify.app/
 
-#Project Features
-##Product List Page:
+# Project Features
+## Product List Page:
 
 Fetches products from GET /online-shop
 
-##Displays:
+## Displays:
 
 -Product image
 -Title
@@ -22,7 +22,7 @@ Fetches products from GET /online-shop
 -Discount percent badge (if discounted)
 -Responsive product grid
 
-##Individual Product Page
+## Individual Product Page
 -Fetches one product using GET /online-shop/:id
 
 Displays:
@@ -35,7 +35,7 @@ Displays:
 -Reviews
 -“Add to Cart” button with toast notification
 
-##Search & Sorting
+## Search & Sorting
 -Search
 -Updates results dynamically while typing
 -Clears results when the input is empty
@@ -44,36 +44,36 @@ Displays:
 -Price (Low → High / High → Low)
 -Rating (High → Low)
 
-##Shopping Cart
+## Shopping Cart
 -Uses Zustand for global state
 -Item count visible in header
 -Slide-out cart menu
 
-#Features:
+# Features:
 -Increase/decrease quantity
 -Remove items
 -Total price calculation
 -Toast notifications for interactions
 -Fully responsive cart panel
 
-##Checkout Page:
+## Checkout Page:
 -Displays all items in the cart
 -Quantity buttons (+ / –)
 -Remove item button
 -Shows total price
 
-##“Checkout” button:
+## “Checkout” button:
 -Saves order item count
 -Clears cart
 -Redirects to success page
 
-##Success Page
+## Success Page
 -Redirects away if accessed directly
 -Shows success message
 -Displays “Checkout successful!” toast one time only
 
-##Contact Form
-#Validates:
+## Contact Form
+# Validates:
 
 -Full name (min 3 characters)
 -Subject (min 3 characters)
@@ -85,17 +85,17 @@ Displays:
 -Loading spinner during submission
 -Resets the form after sending
 
-##Toast Notifications
-#Used for:
+## Toast Notifications
+# Used for:
 -Adding to cart
 -Removing from cart
 -Checkout success
 -Contact form errors
 -Contact form success
 
-##Unit Tests
+## Unit Tests
 
-#Built with React Testing Library + Jest
+# Built with React Testing Library + Jest
 Includes tests for key components such as:
 
 -Header
@@ -107,7 +107,7 @@ Includes tests for key components such as:
 -Checkout
 -Success
 
-##Tech Stack
+## Tech Stack
 
 -React
 -TypeScript
@@ -121,6 +121,7 @@ Includes tests for key components such as:
 ▶️ How to Run the Project Locally
 1. Clone the repository
 git clone https://github.com/NoroffFEU/jsfw-2025-v1-victoria-jsframeworks.git
+
 cd jsfw-2025-v1-victoria-jsframeworks
 
 2. Install dependencies
