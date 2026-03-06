@@ -27,6 +27,8 @@ export default function Checkout() {
             navigate("/success", { state: { fromCheckout: true } });
     };
 
+    const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1604147706283-d7119b5b822c?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
     /* Checkout container */
     return (
         <div className="checkout-page">
@@ -39,7 +41,15 @@ export default function Checkout() {
                 ) : (
                     items.map(item => (
                         <div key={item.id} className="checkout-item">
-                            <img src={item.image} alt={item.title} className="checkout-item-img" />
+                            <img 
+                                src={item.image || FALLBACK_IMAGE} 
+                                alt={item.title || "Product image"} 
+                                className="checkout-item-img" 
+                                onError={(e) => {
+                                    e.currentTarget.src = FALLBACK_IMAGE;
+                                    e.currentTarget.onerror = null;
+                                }}
+                            />
 
                             <div className="checkout-item-info">
                                 <h3>{item.title}</h3>
