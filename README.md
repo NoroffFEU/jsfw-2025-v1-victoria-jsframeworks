@@ -1,5 +1,7 @@
 JS Frameworks 2025 – Online Shop
 
+![alt text](screenshot.png)
+
 This project is my submission for the JavaScript Frameworks 2025 course assignment.
 It is a fully functional React + TypeScript online shop built using the Noroff Online Shop API.
 
